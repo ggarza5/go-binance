@@ -12,7 +12,7 @@ type secType int
 const (
 	secTypeNone secType = iota
 	secTypeAPIKey
-	secTypeSigned
+	secTypeSigned // if the 'timestamp' parameter is required
 )
 
 type params map[string]interface{}

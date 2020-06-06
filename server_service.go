@@ -13,7 +13,7 @@ type PingService struct {
 func (s *PingService) Do(ctx context.Context, opts ...RequestOption) (err error) {
 	r := &request{
 		method:   "GET",
-		endpoint: "/api/v1/ping",
+		endpoint: "/api/v3/ping",
 	}
 	_, err = s.c.callAPI(ctx, r, opts...)
 	return err
@@ -28,7 +28,7 @@ type ServerTimeService struct {
 func (s *ServerTimeService) Do(ctx context.Context, opts ...RequestOption) (serverTime int64, err error) {
 	r := &request{
 		method:   "GET",
-		endpoint: "/api/v1/time",
+		endpoint: "/api/v3/time",
 	}
 	data, err := s.c.callAPI(ctx, r, opts...)
 	if err != nil {
@@ -40,4 +40,20 @@ func (s *ServerTimeService) Do(ctx context.Context, opts ...RequestOption) (serv
 	}
 	serverTime = j.Get("serverTime").MustInt64()
 	return serverTime, nil
+}
+
+// SetServerTimeService set server time
+type SetServerTimeService struct {
+	c *Client
+}
+
+// Do send request
+func (s *SetServerTimeService) Do(ctx context.Context, opts ...RequestOption) (timeOffset int64, err error) {
+	serverTime, err := s.c.NewServerTimeService().Do(ctx)
+	if err != nil {
+		return 0, err
+	}
+	timeOffset = currentTimestamp() - serverTime
+	s.c.TimeOffset = timeOffset
+	return timeOffset, nil
 }

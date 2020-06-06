@@ -170,3 +170,4 @@ type SnapshotPositions struct {
 	Symbol           string `json:"symbol"`
 	UnRealizedProfit string `json:"unRealizedProfit"`
 }
+

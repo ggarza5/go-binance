@@ -22,7 +22,7 @@ Name | Description | Status
 [user-data-stream.md](https://github.com/binance-exchange/binance-official-api-docs/blob/master/user-data-stream.md) | Details on the dedicated account stream | <input type="checkbox" checked>  Implemented
 [wapi-api.md](https://github.com/binance-exchange/binance-official-api-docs/blob/master/wapi-api.md) | Details on the Withdrawal API (/wapi) | <input type="checkbox" checked>  Partially Implemented
 [margin-api.md](https://github.com/binance-exchange/binance-official-api-docs/blob/master/margin-api.md) | Details on the Margin API (/sapi) | <input type="checkbox" checked>  Implemented
-
+[futures-api.md](https://binance-docs.github.io/apidocs/futures/en/#general-info) | Details on the Futures API (/fapi) | <input type="checkbox" checked>  Partially Implemented
 
 ### Installation
 
@@ -54,6 +54,7 @@ var (
     secretKey = "your secret key"
 )
 client := binance.NewClient(apiKey, secretKey)
+futuresClient := binance.NewFuturesClient(apiKey, secretKey)
 ```
 
 A service instance stands for a REST API endpoint and is initialized by client.NewXXXService function.
@@ -281,4 +282,19 @@ if err != nil {
     return
 }
 <-doneC
+```
+
+#### Setting Server Time
+
+Your system time may be incorrect and you may use following function to set the time offset based off Binance Server Time:
+
+```golang
+// use the client future for Futures
+client.NewSetServerTimeService().Do(context.Background())
+```
+
+Or you can also overwrite the `TimeOffset` yourself:
+
+```golang
+client.TimeOffset = 123
 ```
