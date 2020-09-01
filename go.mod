@@ -1,4 +1,4 @@
-module github.com/ggarza5/go-binance-margin
+module github.com/adshao/go-binance
 
 go 1.13
 
