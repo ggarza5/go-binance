@@ -2,10 +2,10 @@
 
 A Golang SDK for [binance](https://www.binance.com) API.
 
-[![Build Status](https://travis-ci.org/adshao/go-binance.svg?branch=master)](https://travis-ci.org/adshao/go-binance)
-[![GoDoc](https://godoc.org/github.com/adshao/go-binance?status.svg)](https://godoc.org/github.com/adshao/go-binance)
-[![Go Report Card](https://goreportcard.com/badge/github.com/adshao/go-binance)](https://goreportcard.com/report/github.com/adshao/go-binance)
-[![codecov](https://codecov.io/gh/adshao/go-binance/branch/master/graph/badge.svg)](https://codecov.io/gh/adshao/go-binance)
+[![Build Status](https://travis-ci.org/ggarza5/go-binance-margin.svg?branch=master)](https://travis-ci.org/ggarza5/go-binance-margin)
+[![GoDoc](https://godoc.org/github.com/ggarza5/go-binance-margin?status.svg)](https://godoc.org/github.com/ggarza5/go-binance-margin)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ggarza5/go-binance-margin)](https://goreportcard.com/report/github.com/ggarza5/go-binance-margin)
+[![codecov](https://codecov.io/gh/ggarza5/go-binance-margin/branch/master/graph/badge.svg)](https://codecov.io/gh/ggarza5/go-binance-margin)
 
 All the REST APIs listed in [binance API document](https://github.com/binance-exchange/binance-official-api-docs) are implemented, as well as the websocket APIs.
 
@@ -27,20 +27,20 @@ Name | Description | Status
 ### Installation
 
 ```shell
-go get github.com/adshao/go-binance
+go get github.com/ggarza5/go-binance-margin
 ```
 
 ### Importing
 
 ```golang
 import (
-    "github.com/adshao/go-binance"
+    "github.com/ggarza5/go-binance-margin"
 )
 ```
 
 ### Documentation
 
-[![GoDoc](https://godoc.org/github.com/adshao/go-binance?status.svg)](https://godoc.org/github.com/adshao/go-binance)
+[![GoDoc](https://godoc.org/github.com/ggarza5/go-binance-margin?status.svg)](https://godoc.org/github.com/ggarza5/go-binance-margin)
 
 ### REST API
 
@@ -61,7 +61,7 @@ A service instance stands for a REST API endpoint and is initialized by client.N
 
 Simply call API in chain style. Call Do() in the end to send HTTP request.
 
-Following are some simple examples, please refer to [godoc](https://godoc.org/github.com/adshao/go-binance) for full references.
+Following are some simple examples, please refer to [godoc](https://godoc.org/github.com/ggarza5/go-binance-margin) for full references.
 
 #### Create Order
 
