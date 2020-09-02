@@ -20,7 +20,7 @@ func ToJSONList(v []byte) []byte {
 	return v
 }
 
-var positionPrecisions = map[string]int{
+var PositionPrecisions = map[string]int{
 	"ETH":   3,
 	"BNB":   2,
 	"LINK":  0,
@@ -200,7 +200,7 @@ var positionPrecisions = map[string]int{
 	"SXP":   0,
 }
 
-var pricePrecisions = map[string]int{
+var PricePrecisions = map[string]int{
 	"FET":   8,
 	"IOTX":  8,
 	"PHB":   8,
